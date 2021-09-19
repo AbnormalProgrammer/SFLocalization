@@ -26,14 +26,22 @@ class SFLocalizationAutoMaker: NSObject,SFLocalizationProtocol {
     /// 直接使用iOS系统当前的语言
     /// - Parameter path: 语言文件所在路径
     /// - Returns: 空
-    internal func initWith(bundlePath path:String) -> Void {
-        
+    internal func initWith(targetBundle sourceBundle:Bundle) -> Void {
+        self.targetBundle = sourceBundle
     }
     
     internal func localLanguage(from key: String) -> String {
-        <#code#>
+        return NSLocalizedString(key, bundle: self.targetBundle, comment: "")
+    }
+    
+    func updateLanguage(language abbreviation: String) {
+    }
+    
+    func currentLanguage() -> String {
+        return ""
     }
     // MARK: - actions
     // MARK: - accessors
+    private var targetBundle:Bundle = .main/*目标bundle，默认是main bundle*/
     // MARK: - delegates
 }

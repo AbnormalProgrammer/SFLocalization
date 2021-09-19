@@ -7,6 +7,10 @@
 
 import UIKit
 
+public func localString(_ key:String) -> String {
+    return SFLocalizationManager.sharedInstance.localLanguage(from: key)
+}
+
 public class SFLocalizationManager: NSObject,SFLocalizationProtocol {
     internal static let sharedInstance: SFLocalizationManager = {
         let instance = SFLocalizationManager.init()
@@ -27,34 +31,52 @@ public class SFLocalizationManager: NSObject,SFLocalizationProtocol {
         
     }
     // MARK: - public interfaces
-    /// 初始化接口
-    /// - Parameters:
-    ///   - path: 各个strings文件的路径
-    ///   - isAuto: 是否跟随系统语言变化
-    ///   - listPath: APP中的语言列表
+    /// 语言随系统变化而变化的
+    /// - Parameter sourceBundle: 自定义的bundle
     /// - Returns: 空
-    public func initWith(stringsFiles path:String,auto isAuto:Bool = true,languagesList listPath:String) -> Void {
-        self.isAuto = isAuto
-        if self.isAuto {
-            self.autoLanguageMaker = SFLocalizationAutoMaker.init()
-            self.autoLanguageMaker?.initWith(bundlePath: path)
-        }
-        self.stringsFilePath = path
-        self.languageListPath = listPath
+    public func initAutoLanguage(targetBundle sourceBundle:Bundle = .main) -> Void {
+        self.localBundle = sourceBundle
+        self.autoLanguageMaker = SFLocalizationAutoMaker.init()
+        self.autoLanguageMaker?.initWith(targetBundle: self.localBundle)
     }
     
-    public func localLanguage(from key: String) -> String {
+    /// 手动控制的APP语言
+    /// - Parameters:
+    ///   - sourceBundle: 自定义的bundle
+    ///   - abbreviation: 语言的缩写
+    /// - Returns: 空
+    public func initManualLanguage(targetBundle sourceBundle:Bundle = .main) -> Void {
+        self.localBundle = sourceBundle
+        self.manualLanguageMaker = SFLocalizationManualMaker.init(bundle: self.localBundle)
+    }
+    
+    internal func localLanguage(from key: String) -> String {
         var result:String = ""
-        if self.isAuto {
+        if self.autoLanguageMaker != nil {
             result = self.autoLanguageMaker!.localLanguage(from: key)
+        } else {
+            result = self.manualLanguageMaker!.localLanguage(from: key)
         }
         return result
     }
+    
+    internal func updateLanguage(language abbreviation: String) -> Void {
+        guard self.manualLanguageMaker != nil else {
+            return
+        }
+        self.manualLanguageMaker?.updateLanguage(language: abbreviation)
+    }
+    
+    internal func currentLanguage() -> String {
+        guard self.manualLanguageMaker != nil else {
+            return ""
+        }
+        return self.manualLanguageMaker!.currentLanguage()
+    }
     // MARK: - actions
     // MARK: - accessors
-    private var isAuto:Bool = true/*是否跟随系统语言变化而变化*/
-    private var stringsFilePath:String = ""/*本地化字符串文件所在路径*/
-    private var languageListPath:String = ""/*APP中所需要的语言种类的列表*/
+    private var localBundle:Bundle = .main/*bundle文件，默认是main bundle*/
     private var autoLanguageMaker:SFLocalizationAutoMaker?/*语言随iOS系统变化而变化的处理器*/
+    private var manualLanguageMaker:SFLocalizationManualMaker?/*手动控制语言变化*/
     // MARK: - delegates
 }

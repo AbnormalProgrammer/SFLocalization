@@ -25,12 +25,21 @@ class SFLocalizationStorger: NSObject {
     // MARK: - accessors
     private let StoredLanguageKey:String = "com.SFLocalization.CurrentLanguage"/*记录当前用户选择的语言的缩写*/
     
-    internal var currentLanguage:String? {
+    internal var currentLanguage:String {
         set {
+            print(#function,newValue)
             UserDefaults.standard.setValue(newValue, forKey: self.StoredLanguageKey)
+            UserDefaults.standard.synchronize()
         }
         get {
-            return UserDefaults.standard.value(forKey: self.StoredLanguageKey) as? String
+            let result:String? = UserDefaults.standard.value(forKey: self.StoredLanguageKey) as? String
+            print("读取出来的值:\(result)")
+            if result == nil {
+                print(#function,"出现为空的情况")
+                self.currentLanguage = "en"
+            }
+            print("最后读出来的值:\(result)")
+            return UserDefaults.standard.string(forKey: self.StoredLanguageKey)!
         }
     }
     // MARK: - delegates

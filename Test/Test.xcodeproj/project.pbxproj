@@ -20,6 +20,9 @@
 		1D1B328926F5944A00BCAACE /* SFLocalizationStorager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1B328826F5944A00BCAACE /* SFLocalizationStorager.swift */; };
 		1D1B328B26F5972300BCAACE /* SFLocalizationAutoMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1B328A26F5972300BCAACE /* SFLocalizationAutoMaker.swift */; };
 		1D1B328D26F5982F00BCAACE /* SFLocalizationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1B328C26F5982F00BCAACE /* SFLocalizationProtocol.swift */; };
+		1D4A64EC26F73F3B00997B81 /* languages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D4A64EB26F73F3B00997B81 /* languages.plist */; };
+		1D4A64EE26F7463400997B81 /* SFLocalizationManualMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A64ED26F7463400997B81 /* SFLocalizationManualMaker.swift */; };
+		1D4A64F626F769C400997B81 /* LanguagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A64F526F769C400997B81 /* LanguagesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 		1D1B328826F5944A00BCAACE /* SFLocalizationStorager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFLocalizationStorager.swift; sourceTree = "<group>"; };
 		1D1B328A26F5972300BCAACE /* SFLocalizationAutoMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFLocalizationAutoMaker.swift; sourceTree = "<group>"; };
 		1D1B328C26F5982F00BCAACE /* SFLocalizationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFLocalizationProtocol.swift; sourceTree = "<group>"; };
+		1D4A64EB26F73F3B00997B81 /* languages.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = languages.plist; sourceTree = "<group>"; };
+		1D4A64ED26F7463400997B81 /* SFLocalizationManualMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFLocalizationManualMaker.swift; sourceTree = "<group>"; };
+		1D4A64F526F769C400997B81 /* LanguagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,11 +122,13 @@
 				1D1B324726F58A3A00BCAACE /* AppDelegate.swift */,
 				1D1B324926F58A3A00BCAACE /* SceneDelegate.swift */,
 				1D1B324B26F58A3A00BCAACE /* ViewController.swift */,
+				1D4A64F526F769C400997B81 /* LanguagesViewController.swift */,
 				1D1B324D26F58A3A00BCAACE /* Main.storyboard */,
 				1D1B325026F58A3B00BCAACE /* Assets.xcassets */,
 				1D1B325226F58A3B00BCAACE /* LaunchScreen.storyboard */,
 				1D1B325526F58A3B00BCAACE /* Info.plist */,
 				1D1B328426F591E600BCAACE /* Localizable.strings */,
+				1D4A64EB26F73F3B00997B81 /* languages.plist */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -150,6 +158,7 @@
 				1D1B328826F5944A00BCAACE /* SFLocalizationStorager.swift */,
 				1D1B328A26F5972300BCAACE /* SFLocalizationAutoMaker.swift */,
 				1D1B328C26F5982F00BCAACE /* SFLocalizationProtocol.swift */,
+				1D4A64ED26F7463400997B81 /* SFLocalizationManualMaker.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -261,6 +270,7 @@
 				1D1B325426F58A3B00BCAACE /* LaunchScreen.storyboard in Resources */,
 				1D1B328226F591E600BCAACE /* Localizable.strings in Resources */,
 				1D1B325126F58A3B00BCAACE /* Assets.xcassets in Resources */,
+				1D4A64EC26F73F3B00997B81 /* languages.plist in Resources */,
 				1D1B324F26F58A3A00BCAACE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,11 +298,13 @@
 			files = (
 				1D1B324C26F58A3A00BCAACE /* ViewController.swift in Sources */,
 				1D1B328B26F5972300BCAACE /* SFLocalizationAutoMaker.swift in Sources */,
+				1D4A64EE26F7463400997B81 /* SFLocalizationManualMaker.swift in Sources */,
 				1D1B324826F58A3A00BCAACE /* AppDelegate.swift in Sources */,
 				1D1B328926F5944A00BCAACE /* SFLocalizationStorager.swift in Sources */,
 				1D1B324A26F58A3A00BCAACE /* SceneDelegate.swift in Sources */,
 				1D1B328D26F5982F00BCAACE /* SFLocalizationProtocol.swift in Sources */,
 				1D1B327926F58F2500BCAACE /* SFLocalizationManager.swift in Sources */,
+				1D4A64F626F769C400997B81 /* LanguagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
