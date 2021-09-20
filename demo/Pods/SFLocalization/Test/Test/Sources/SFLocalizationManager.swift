@@ -12,7 +12,7 @@ public func localString(_ key:String) -> String {
 }
 
 public class SFLocalizationManager: NSObject,SFLocalizationProtocol {
-    public static let sharedInstance: SFLocalizationManager = {
+    internal static let sharedInstance: SFLocalizationManager = {
         let instance = SFLocalizationManager.init()
         // setup code
         return instance

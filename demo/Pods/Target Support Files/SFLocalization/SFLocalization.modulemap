@@ -1,0 +1,6 @@
+framework module SFLocalization {
+  umbrella header "SFLocalization-umbrella.h"
+
+  export *
+  module * { export * }
+}

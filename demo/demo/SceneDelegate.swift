@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SFLocalization
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

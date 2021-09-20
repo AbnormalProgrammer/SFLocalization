@@ -2,5 +2,5 @@ platform:ios,'14.0'
 use_frameworks!
 
 target 'demo' do
-  pod 'SFLocalization', '0.0.0'
+  pod 'SFLocalization', '0.0.1'
 end
