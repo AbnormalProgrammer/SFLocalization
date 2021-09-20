@@ -19,7 +19,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         SFLocalizationManager.sharedInstance.initManualLanguage()
         SFLocalizationManager.sharedInstance.updateLanguage(language: SFLocalizationManager.sharedInstance.currentLanguage())
-        print(SFLocalizationManager.sharedInstance.currentLanguage())
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

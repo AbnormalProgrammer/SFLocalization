@@ -27,18 +27,14 @@ class SFLocalizationStorger: NSObject {
     
     internal var currentLanguage:String {
         set {
-            print(#function,newValue)
-            UserDefaults.standard.setValue(newValue, forKey: self.StoredLanguageKey)
+            UserDefaults.standard.set(newValue, forKey: self.StoredLanguageKey)
             UserDefaults.standard.synchronize()
         }
         get {
             let result:String? = UserDefaults.standard.value(forKey: self.StoredLanguageKey) as? String
-            print("读取出来的值:\(result)")
             if result == nil {
-                print(#function,"出现为空的情况")
                 self.currentLanguage = "en"
             }
-            print("最后读出来的值:\(result)")
             return UserDefaults.standard.string(forKey: self.StoredLanguageKey)!
         }
     }

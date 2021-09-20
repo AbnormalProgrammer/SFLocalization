@@ -20,7 +20,6 @@ class ViewController: UIViewController {
         let controller:LanguagesViewController = LanguagesViewController.init()
         controller.modalPresentationStyle = .fullScreen
         controller.selectedLanguageClosure = {
-            print("会掉的是",$0)
             SFLocalizationManager.sharedInstance.updateLanguage(language: $0)
             self.targetLabel.text = localString("testkey0")
         }

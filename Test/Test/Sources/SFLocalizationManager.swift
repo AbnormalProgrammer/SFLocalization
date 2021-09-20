@@ -50,7 +50,7 @@ public class SFLocalizationManager: NSObject,SFLocalizationProtocol {
         self.manualLanguageMaker = SFLocalizationManualMaker.init(bundle: self.localBundle)
     }
     
-    internal func localLanguage(from key: String) -> String {
+    public func localLanguage(from key: String) -> String {
         var result:String = ""
         if self.autoLanguageMaker != nil {
             result = self.autoLanguageMaker!.localLanguage(from: key)
@@ -60,14 +60,14 @@ public class SFLocalizationManager: NSObject,SFLocalizationProtocol {
         return result
     }
     
-    internal func updateLanguage(language abbreviation: String) -> Void {
+    public func updateLanguage(language abbreviation: String) -> Void {
         guard self.manualLanguageMaker != nil else {
             return
         }
         self.manualLanguageMaker?.updateLanguage(language: abbreviation)
     }
     
-    internal func currentLanguage() -> String {
+    public func currentLanguage() -> String {
         guard self.manualLanguageMaker != nil else {
             return ""
         }
