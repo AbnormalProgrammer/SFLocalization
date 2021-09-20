@@ -26,3 +26,6 @@ self.targetLabel.text = localString("testkey0")
 ```
 ## 遗留问题
 1. 通过啥方式实现UI的自主更新语言呢？
+## 使用方法
+使用Cocoapod导入`pod 'SFLocalization', '0.0.2'`<br>
+在使用的地方引入`import SFLocalization`
