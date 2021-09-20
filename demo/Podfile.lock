@@ -1,16 +1,16 @@
 PODS:
-  - SFLocalization (0.0.1)
+  - SFLocalization (0.0.2)
 
 DEPENDENCIES:
-  - SFLocalization (= 0.0.1)
+  - SFLocalization (= 0.0.2)
 
 SPEC REPOS:
   trunk:
     - SFLocalization
 
 SPEC CHECKSUMS:
-  SFLocalization: dbca7f817722d523bbf4fe493be37fb2a85341a6
+  SFLocalization: d9e9229a224a4a00ad07445d6d80476f49d23ece
 
-PODFILE CHECKSUM: d2134ea31ce1038ff8958f8d20b1db0894fd3743
+PODFILE CHECKSUM: f979593df518e4505397f98bcc930ddbdefd3511
 
 COCOAPODS: 1.11.2
