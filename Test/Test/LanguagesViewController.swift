@@ -8,6 +8,9 @@
 import UIKit
 
 class LanguagesViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    deinit {
+        print(type(of: self))
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,8 +20,6 @@ class LanguagesViewController: UIViewController,UITableViewDelegate,UITableViewD
         self.view.addSubview(self.contentTableView)
         // Do any additional setup after loading the view.
     }
-    
-    internal var selectedLanguageClosure:((String) -> Void)?
     
     private var languages:[String] = []
     private lazy var contentTableView:UITableView = {
@@ -43,8 +44,9 @@ class LanguagesViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.selectedLanguageClosure?(self.languages[indexPath.row])
+        SFLocalizationManager.sharedInstance.updateLanguage(language: self.languages[indexPath.row])
         self.dismiss(animated: true) {
+            NotificationCenter.default.post(name: NSNotification.Name.init(SFLanguageChangeNotification), object: nil)
         }
     }
 }

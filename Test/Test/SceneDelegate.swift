@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         SFLocalizationManager.sharedInstance.initManualLanguage()
         SFLocalizationManager.sharedInstance.updateLanguage(language: SFLocalizationManager.sharedInstance.currentLanguage())
+        NotificationCenter.default.addObserver(self, selector: #selector(resetRootViewController), name: NSNotification.Name.init(SFLanguageChangeNotification), object: nil)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -48,7 +49,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
+    
+    @objc private func resetRootViewController() -> Void {
+        let newRootController:ViewController? = UIStoryboard.init(name: "Main", bundle: .main).instantiateInitialViewController() as? ViewController
+        guard newRootController != nil else {
+            return
+        }
+        self.window?.rootViewController = newRootController
+    }
 }
 

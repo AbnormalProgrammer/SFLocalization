@@ -23,6 +23,7 @@
 		1D4A64EC26F73F3B00997B81 /* languages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D4A64EB26F73F3B00997B81 /* languages.plist */; };
 		1D4A64EE26F7463400997B81 /* SFLocalizationManualMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A64ED26F7463400997B81 /* SFLocalizationManualMaker.swift */; };
 		1D4A64F626F769C400997B81 /* LanguagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A64F526F769C400997B81 /* LanguagesViewController.swift */; };
+		1D5057BE271838D70003BB71 /* SFLocalizationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5057BD271838D70003BB71 /* SFLocalizationConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		1D4A64EB26F73F3B00997B81 /* languages.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = languages.plist; sourceTree = "<group>"; };
 		1D4A64ED26F7463400997B81 /* SFLocalizationManualMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFLocalizationManualMaker.swift; sourceTree = "<group>"; };
 		1D4A64F526F769C400997B81 /* LanguagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewController.swift; sourceTree = "<group>"; };
+		1D5057BD271838D70003BB71 /* SFLocalizationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFLocalizationConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				1D1B328A26F5972300BCAACE /* SFLocalizationAutoMaker.swift */,
 				1D1B328C26F5982F00BCAACE /* SFLocalizationProtocol.swift */,
 				1D4A64ED26F7463400997B81 /* SFLocalizationManualMaker.swift */,
+				1D5057BD271838D70003BB71 /* SFLocalizationConstants.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			files = (
 				1D1B324C26F58A3A00BCAACE /* ViewController.swift in Sources */,
 				1D1B328B26F5972300BCAACE /* SFLocalizationAutoMaker.swift in Sources */,
+				1D5057BE271838D70003BB71 /* SFLocalizationConstants.swift in Sources */,
 				1D4A64EE26F7463400997B81 /* SFLocalizationManualMaker.swift in Sources */,
 				1D1B324826F58A3A00BCAACE /* AppDelegate.swift in Sources */,
 				1D1B328926F5944A00BCAACE /* SFLocalizationStorager.swift in Sources */,

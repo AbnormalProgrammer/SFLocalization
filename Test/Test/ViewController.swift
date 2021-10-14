@@ -19,10 +19,6 @@ class ViewController: UIViewController {
     @IBAction func tapGestureAction(_ sender: UITapGestureRecognizer) {
         let controller:LanguagesViewController = LanguagesViewController.init()
         controller.modalPresentationStyle = .fullScreen
-        controller.selectedLanguageClosure = {
-            SFLocalizationManager.sharedInstance.updateLanguage(language: $0)
-            self.targetLabel.text = localString("testkey0")
-        }
         self.present(controller, animated: true) {
         }
     }
